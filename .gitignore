@@ -1,0 +1,9 @@
+.env
+
+node_modules
+dist
+
+.yarn
+images
+
+paymentTest.ts
