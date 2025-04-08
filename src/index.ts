@@ -25,7 +25,7 @@ bot.start(async (ctx) => {
   const text = ctx.message.text; // Access the text property directly
   const textList = text.split(" ");
   const referralId = textList.length > 1 ? textList[1] : undefined;
-  const link = `${MINI_APP}?${referralId ? `&referralId=${referralId}` : ""}`;
+  const link = `${MINI_APP}?${referralId ? `referralId=${referralId}` : ""}`;
   console.log(link, referralId);
   const keyboard = [[Markup.button.webApp("Launch", link)]];
 
