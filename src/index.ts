@@ -87,6 +87,6 @@ async function init() {
 init();
 
 cron.schedule("*/5 * * * *", () => {
-  keepAlive("");
+  keepAlive(process.env.BASE_URL || "");
   console.log("Pinging the server every 5 minutes");
 });
