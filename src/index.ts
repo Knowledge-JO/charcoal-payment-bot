@@ -1,11 +1,9 @@
 import dotenv from "dotenv";
 import { Markup, Telegraf } from "telegraf";
-import cron from "node-cron";
 
 import { updateInvoiceStatus } from "./controllers/invoice";
 import { paymentSuccessful } from "./controllers/paymentReceipt";
 import { connect } from "./db/connectDB";
-import { keepAlive } from "./lib/utils";
 
 dotenv.config();
 
@@ -86,7 +84,3 @@ async function init() {
 
 init();
 
-cron.schedule("*/5 * * * *", () => {
-  keepAlive(process.env.BASE_URL || "");
-  console.log("Pinging the server every 5 minutes");
-});
